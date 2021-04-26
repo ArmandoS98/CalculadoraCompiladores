@@ -17,7 +17,23 @@ public class CalculadoraCompi28042021 {
     public static void main(String[] args) {
         // TODO code application logic here
         
-        
+        System.out.println("Loading starts...");
+
+        splashudv.SplashArt Splash = new splashudv.SplashArt();
+        Splash.setVisible(true);
+        try {
+            for (int i = 0; i <= 100; i++) {
+                Thread.sleep(40);
+                Splash.progressP.setText(Integer.toString(i) + "%");
+                Splash.progressBar.setValue(i);
+            }
+
+        } catch (InterruptedException e) {
+        }
+
+        System.out.println("Loading process completed. Closing loading window...");
+        Splash.dispose();
+
         new Main().show();
     }
     
