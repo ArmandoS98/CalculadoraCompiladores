@@ -4,7 +4,8 @@ import Compilador.tree.*;
 
 terminal            PLUS, MINUS, MUL, DIV, ASSIGN;
 terminal            LPAREN, RPAREN;
-terminal Integer    NUMBER;
+terminal Double     DECIMAL_NUMBER;
+terminal Double     INTEGER_NUMBER;
 terminal String     IDENT;
 
 non terminal Tree expr;
@@ -27,6 +28,8 @@ expr          ::= expr:e1 PLUS expr:e2
                     {: RESULT = new Assignment(s, e); :}
                 | IDENT:s
                     {: RESULT = new Identifier(s); :}
-                | NUMBER:n
+                | DECIMAL_NUMBER:n
+                    {: RESULT = new Literal(n); :}
+                | INTEGER_NUMBER:n
                     {: RESULT = new Literal(n); :}
                 ;

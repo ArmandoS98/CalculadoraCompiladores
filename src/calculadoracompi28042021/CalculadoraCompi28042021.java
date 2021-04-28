@@ -5,6 +5,8 @@
  */
 package calculadoracompi28042021;
 
+import Compilador.LexicalGrammarGenerator;
+
 /**
  *
  * @author Armando Santos
@@ -16,9 +18,9 @@ public class CalculadoraCompi28042021 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        
+               
         System.out.println("Loading starts...");
-
+        
         splashudv.SplashArt Splash = new splashudv.SplashArt();
         Splash.setVisible(true);
         try {

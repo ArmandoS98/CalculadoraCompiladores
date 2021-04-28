@@ -9,7 +9,7 @@ public class Minus extends Tree {
         right = r;
     }
 
-    public Integer eval(Environment e) {
+    public Double eval(Environment e) {
         return left.eval(e) - right.eval(e);
     }
     public void print() {

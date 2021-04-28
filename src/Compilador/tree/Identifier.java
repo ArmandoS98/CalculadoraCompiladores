@@ -8,7 +8,7 @@ public class Identifier extends Tree {
         id = s;
     }
 
-    public Integer eval(Environment e) {
+    public Double eval(Environment e) {
         return e.lookup(id);
     }
 

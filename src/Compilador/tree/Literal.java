@@ -2,16 +2,21 @@ package Compilador.tree;
 
 public class Literal extends Tree {
 
-    Integer val;
-    public Literal(Integer i) {
+    Double val;
+
+    public Literal(Double i) {
         val = i;
+        
     }
 
-    public Integer eval(Environment e) {
+    public Double eval(Environment e) {
         return val;
     }
+    
     public void print() {
         System.out.print("(LITERAL " + val + ")");
     }
+    
+    
 }
 

@@ -10,8 +10,8 @@ public class Assignment extends Tree {
         rhs = e;
     }
 
-    public Integer eval(Environment e) {
-        Integer val = rhs.eval(e);
+    public Double eval(Environment e) {
+        Double val = rhs.eval(e);
         e.set(lhs, val);
         return val;
     }

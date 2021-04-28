@@ -55,6 +55,11 @@ public class Main extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         txtIn_OutPut.setFont(new java.awt.Font("Dialog", 1, 38)); // NOI18N
+        txtIn_OutPut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtIn_OutPutActionPerformed(evt);
+            }
+        });
 
         jButton1.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         jButton1.setText("7");
@@ -213,17 +218,17 @@ public class Main extends javax.swing.JFrame {
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jButton17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addComponent(jButton17, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(jButton17, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -247,9 +252,9 @@ public class Main extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(66, 66, 66)
+                .addGap(54, 54, 54)
                 .addComponent(txtIn_OutPut, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -302,7 +307,9 @@ public class Main extends javax.swing.JFrame {
 
             env.print();
             tree.print();
-
+            
+            System.out.println("\nST is: " + st);
+            
             txtIn_OutPut.setText("" + tree.eval(env));
 
         } catch (Exception ex) {
@@ -310,6 +317,10 @@ public class Main extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_jButton13ActionPerformed
+
+    private void txtIn_OutPutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIn_OutPutActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtIn_OutPutActionPerformed
 
     /**
      * @param args the command line arguments

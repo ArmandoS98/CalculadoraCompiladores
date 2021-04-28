@@ -4,27 +4,29 @@ import java.util.Map;
 
 public class Environment {
 
-    private HashMap<String,Integer> map;
+    private HashMap<String,Double> map;
 
     public Environment() {
-        map = new HashMap<String,Integer>();
+        map = new HashMap<String,Double>();
     }
 
-    public Integer lookup(String var) {
+    public Double lookup(String var) {
         return map.get(var);
     }
+    
 
-    public void set(String var, Integer val) {
+    public void set(String var, Double val) {
         map.put(var, val);
     }
 
+
     public void print () {
-        for (Map.Entry<String,Integer> entry: map.entrySet()) {
+        for (Map.Entry<String,Double> entry: map.entrySet()) {
             System.out.println(entry.getKey() + " -> " + entry.getValue());
         }
     }
 
-    public static void main (String [] args)
+    /*public static void main (String [] args)
     {
         Environment e = new Environment();
 
@@ -33,6 +35,6 @@ public class Environment {
 
         System.out.println("Hello = " + e.lookup("hello"));
         System.out.println("World = " + e.lookup("world"));
-    }
+    }*/
 
 }

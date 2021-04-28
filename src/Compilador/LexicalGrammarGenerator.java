@@ -19,16 +19,16 @@ public class LexicalGrammarGenerator {
 
 //Reemplazar la ruta de destino si se genera una modificacion del mismo
     public static void main(String[] args) throws Exception {
-        String path = "C:/Users/Armando Santos/Documents/NetBeansProjects/CalculadoraCompi28042021/src/Compilador/Lexer.flex";
+        String path = "C:/Users/David/Documents/NetBeansProjects/CalculadoraCompiladores/src/Compilador/Lexer.flex";
         //String path2 = "C:/Users/Armando Santos/Documents/NetBeansProjects/CalculadoraCompi28042021/src/Compilador/LexerCup.flex";
-        String[] rutaS = {"-parser", "Sintax", "C:/Users/Armando Santos/Documents/NetBeansProjects/CalculadoraCompi28042021/src/Compilador/Sintax.cup"};
+        String[] rutaS = {"-parser", "Sintax", "C:/Users/David/Documents/NetBeansProjects/CalculadoraCompiladores/src/Compilador/Sintax.cup"};
         init(path, "", rutaS);
     }
-
+//
     private static void init(String path, String path2, String[] pathS) throws IOException, Exception {
         File mFile;
         
-        mFile = new File(path);
+        mFile = new File(path); 
         JFlex.Main.generate(mFile);
         
         /*mFile = new File(path2);
@@ -36,20 +36,20 @@ public class LexicalGrammarGenerator {
         
         java_cup.Main.main(pathS);
 
-        Path rutaSym = Paths.get("C:/Users/Armando Santos/Documents/NetBeansProjects/CalculadoraCompi28042021/src/Compilador/sym.java");
+        Path rutaSym = Paths.get("C:/Users/David/Documents/NetBeansProjects/CalculadoraCompiladores/src/Compilador/sym.java");
 
         if (Files.exists(rutaSym)) {
             Files.delete(rutaSym);
         }
-        Files.move(Paths.get("C:/Users/Armando Santos/Documents/NetBeansProjects/CalculadoraCompi28042021/sym.java"),
-                Paths.get("C:/Users/Armando Santos/Documents/NetBeansProjects/CalculadoraCompi28042021/src/Compilador/sym.java"));
+        Files.move(Paths.get("C:/Users/David/Documents/NetBeansProjects/CalculadoraCompiladores/sym.java"),
+                Paths.get("C:/Users/David/Documents/NetBeansProjects/CalculadoraCompiladores/src/Compilador/sym.java"));
 
-        Path rutaSin = Paths.get("C:/Users/Armando Santos/Documents/NetBeansProjects/Analizador/src/Compilador/Sintax.java");
+        Path rutaSin = Paths.get("C:/Users/David/Documents/NetBeansProjects/CalculadoraCompiladores/Analizador/src/Compilador/Sintax.java");
 
         if (Files.exists(rutaSin)) {
             Files.delete(rutaSin);
         }
-        Files.move(Paths.get("C:/Users/Armando Santos/Documents/NetBeansProjects/CalculadoraCompi28042021/Sintax.java"),
-                Paths.get("C:/Users/Armando Santos/Documents/NetBeansProjects/CalculadoraCompi28042021/src/Compilador/Sintax.java"));
+        Files.move(Paths.get("C:/Users/David/Documents/NetBeansProjects/CalculadoraCompiladores/Sintax.java"),
+                Paths.get("C:/Users/David/Documents/NetBeansProjects/CalculadoraCompiladores/src/Compilador/Sintax.java"));
     }
 }

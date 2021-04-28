@@ -24,14 +24,16 @@ InputCharacter = [^\r\n]
 WhiteSpace    = {LineTerminator} | [ \t\f]
 
 Digit          = [0-9]
-Number         = {Digit} {Digit}*
+IntegerNumber  = {Digit} {Digit}*
+DecimalNumber  = [0-9]+("."[  |0-9]+)?
 Letter         = [a-zA-Z]
 Identifier     = {Letter} ({Letter}|{Digit})* 
 
 %%
 
 <YYINITIAL> { 
-    {Number}        { return symbol(sym.NUMBER, new Integer(Integer.parseInt(yytext()))); }
+    {IntegerNumber}        { return symbol(sym.INTEGER_NUMBER, new Double(Double.parseDouble(yytext()))); }
+    {DecimalNumber}        { return symbol(sym.DECIMAL_NUMBER, new Double(Double.parseDouble(yytext()))); }
     {Identifier}    { return symbol(sym.IDENT, yytext()); }
     "+"             { return symbol(sym.PLUS); }
     "-"             { return symbol(sym.MINUS); }
